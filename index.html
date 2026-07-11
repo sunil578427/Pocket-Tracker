@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pocket Expense Tracker | Premium Finance Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Main Dashboard Header -->
+        <header class="app-header">
+            <h2>💰 Pocket Tracker</h2>
+            <p class="subtitle">Manage your daily expenses smartly</p>
+        </header>
+
+        <!-- Balance Display Board -->
+        <div class="balance-card">
+            <h3>YOUR NET BALANCE</h3>
+            <h1 id="main-balance">₹0.00</h1>
+            
+            <div class="income-expense-row">
+                <div class="stat-box inc">
+                    <span class="dot"></span>
+                    <div>
+                        <p>Total Income</p>
+                        <h4 id="total-income">₹0.00</h4>
+                    </div>
+                </div>
+                <div class="stat-box exp">
+                    <span class="dot"></span>
+                    <div>
+                        <p>Total Expense</p>
+                        <h4 id="total-expense">₹0.00</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Transaction Form -->
+        <section class="action-section">
+            <h3>➕ Add New Transaction</h3>
+            <form id="transaction-form">
+                <div class="form-group">
+                    <label for="text-input">Description / Detail</label>
+                    <input type="text" id="text-input" placeholder="e.g., Fast Food, Metro Recharge, Salary..." required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="amount-input">Amount (₹)</label>
+                    <div class="modern-amount-wrapper">
+                        <div class="input-with-sign">
+                            <span id="amount-sign-indicator" class="sign-indicator minus-color">-</span>
+                            <input type="number" id="amount-input" placeholder="0.00" required>
+                        </div>
+                        
+                        <!-- Premium Full Width Buttons Grid -->
+                        <div class="modern-toggle-grid">
+                            <button type="button" id="btn-inc" class="modern-btn btn-inc-style" onclick="setTxType('income')">+ Income</button>
+                            <button type="button" id="btn-exp" class="modern-btn btn-exp-style active" onclick="setTxType('expense')">− Expense</button>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-submit">Add Transaction</button>
+            </form>
+        </section>
+
+        <!-- History Log Lists -->
+        <section class="history-section">
+            <h3>📋 Transaction History</h3>
+            <ul id="transaction-list" class="list">
+                <!-- Data dynamically injected by JavaScript -->
+            </ul>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
